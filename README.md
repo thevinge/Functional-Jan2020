@@ -36,8 +36,8 @@ run some terminal commands to set up the basics:
      eval `opam env`
     ```
     to let the shell know where the OPAM files are; and
- 4. also add the very same line, eval `opam env`, to your
-    `.profile/.bashrc` shell init file so you will not have to keep doing that over and over.  
+ 4. also add the same line to your `.profile/.bashrc` shell init file
+    so you will not have to keep doing that over and over.  
 
 Once you have the basics installed, run the following command to
 install additional necessary packages for the class: 
@@ -46,12 +46,10 @@ install additional necessary packages for the class:
   opam install qcheck ocamlfind ledit ocamlbuild merlin ocp-indent user-setup utop
 ```
 
+If you are missing dependencies (m4, make, gcc), they can easily be installed
+with `apt-get` (Ubuntu Linux and Ubuntu Sub-system) or via macports/homebrew (Mac). 
 
-ADDENDUM: Some of you mentioned missing dependencies (m4, make, gcc),
-which can easily be installed with apt-get (Ubuntu Linux and Ubuntu
-Sub-system) or via macports/homebrew (Mac). 
-
-To avoid a dependency on 'bubblewrap' some of you had more luck with:
+To avoid a dependency on `bubblewrap` you may have luck with:
 ```
     opam init --disable-sandboxing
 ```
