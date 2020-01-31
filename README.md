@@ -26,7 +26,7 @@ These instructions are adapted from [Scott F. Smith's instructions](http://pl.cs
 
 For Linux and Mac:
 ------------------
-See The OPAM install page https://opam.ocaml.org/doc/Install.html for
+See [The OPAM install page](https://opam.ocaml.org/doc/Install.html) for
 instructions. Depending on which method you use you may then need to
 run some terminal commands to set up the basics: 
 
