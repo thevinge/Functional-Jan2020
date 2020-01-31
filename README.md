@@ -21,7 +21,7 @@ You need to install
  - OCaml and the qcheck library (use OCaml's package manager OPAM for this)
  - an editor (VS Code) to program/edit OCaml code.
 
-These instructions are adapted from [Scott F. Smith's instructions](http://pl.cs.jhu.edu/pl/ocaml/index.shtml).
+The below instructions are adapted from [Scott F. Smith's instructions](http://pl.cs.jhu.edu/pl/ocaml/index.shtml).
 
 
 For Linux and Mac:
@@ -60,10 +60,10 @@ For Windows:
 ------------
 
 On Windows 10:
-  Install  MSFT Bash on Windows mode https://docs.microsoft.com/en-us/windows/wsl/about
+  Install  MSFT [Bash on Windows](https://docs.microsoft.com/en-us/windows/wsl/about)
   which once you have set up will allow you to follow the Linux Ubuntu
   install instructions to get opam. (Windows 10 only for this
-  unfortunately and it may have some incompatibilities.
+  unfortunately and it may have some incompatibilities).
 
 For older Windows versions:
   - Install a virtual machine with Linux [as explained here](http://pl.cs.jhu.edu/pl/ocaml/index.shtml)
