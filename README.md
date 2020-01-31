@@ -21,7 +21,7 @@ You need to install
  - OCaml and the qcheck library (use OCaml's package manager OPAM for this)
  - an editor (VS Code) to program/edit OCaml code.
 
-These instructions are adapted from [Scott F. Smith's instructions](http://pl.cs.jhu.edu/pl/ocaml/index.shtml)
+These instructions are adapted from [Scott F. Smith's instructions](http://pl.cs.jhu.edu/pl/ocaml/index.shtml).
 
 
 For Linux and Mac:
@@ -31,9 +31,12 @@ instructions. Depending on which method you use you may then need to
 run some terminal commands to set up the basics: 
 
  1. `opam init`                   to initialize OPAM;
- 2. `opam switch create 4.07.1`       to build OCaml version 4.07.1;
- 3. eval `opam config env`      to let the shell know where the OPAM files are; and
- 4. also add the very same line, eval `opam config env`, to your
+ 2. `opam switch create 4.09.0`       to build OCaml version 4.09.0;
+ 3. ```
+     eval `opam env`
+    ```
+    to let the shell know where the OPAM files are; and
+ 4. also add the very same line, eval `opam env`, to your
     `.profile/.bashrc` shell init file so you will not have to keep doing that over and over.  
 
 Once you have the basics installed, run the following command to
