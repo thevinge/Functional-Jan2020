@@ -66,7 +66,7 @@ On Windows 10:
   unfortunately and it may have some incompatibilities.
 
 For older Windows versions:
-  - Install a virtual machine with Linux as explained here http://pl.cs.jhu.edu/pl/ocaml/index.shtml
+  - Install a virtual machine with Linux [as explained here](http://pl.cs.jhu.edu/pl/ocaml/index.shtml)
     and install OCaml on that or
   - Try this installer: https://fdopen.github.io/opam-repository-mingw/installation/
   - Last resort: call Jan
@@ -77,38 +77,32 @@ Checking your OCaml and QCheck installation:
 
 To ensure that OCaml and QCheck is properly installed:
 
-a) check that you can use the arrow keys and backspace in the OCaml
+1. check that you can use the arrow keys and backspace in the OCaml
    toplevel if you run the command
      `utop` or
      `ledit ocaml` (Linux and MacOS) or
      `rlwrap ocaml` (Windows)
    (you don't need ledit or rlwrap as a console inside VS Code it seems)
 
-b) check that in the utop toplevel
+2. check that in the utop toplevel
   ```
     #list;;
   ```
    lists package `qcheck` (version: 0.5 or above)   (not 0.2, 0.3, or 0.4)
 
-   For the 'ocaml' toplevel you need to write two lines:
+   For the `ocaml` toplevel you need to write two lines:
   ```
     #use "topfind";;
     #list;;
   ```
 
-c) check that you can run QCheck from the toplevel following
-   this screencast:
-     https://asciinema.org/a/226227
+3. check that you can run QCheck from the toplevel following [this screencast](https://asciinema.org/a/226227)
+   and from utop with [this screencast](https://asciinema.org/a/226259)
 
-   and from utop with this screencast:
-     https://asciinema.org/a/226259
+4. check that you can build a QCheck test with ocamlbuild
+   following [this screencast](https://asciinema.org/a/226228)
 
-d) check that you can build a QCheck test with ocamlbuild
-   following this screencast:
-     https://asciinema.org/a/226228
-
-   the code for the latter is also available here:
-     https://github.com/jmid/qcheck-example
+   the code for the latter is also available here: https://github.com/jmid/qcheck-example
 
 
 
@@ -125,9 +119,9 @@ Installing VS Code:
   `utop` into the terminal.
 
 
-ADDENDUM: On Windows to get VS Code to communicate with the
+On Windows to get VS Code to communicate type-feedback with the
 'merlin'-server running under the Linux sub-system you need to: go to
-'Settings' and search for 'reason.path.ocaml' 
+'Settings' and search for `reason.path.ocaml`
 - change the `ocamlfind` entry to read `bash -ic ocamlfind`
 - change the `ocamlmerlin` entry to read `bash -ic ocamlmerlin`
 
