@@ -18,7 +18,7 @@ Installation instructions:
 ==========================
 
 You need to install
- - OCaml and the qcheck library (use OCaml's package manager OPAM for this)
+ - [OCaml](https://ocaml.org/) and the [qcheck library](https://github.com/c-cube/qcheck) (use OCaml's package manager [OPAM](https://opam.ocaml.org/) for this)
  - an editor (VS Code) to program/edit OCaml code.
 
 The below instructions are adapted from [Scott F. Smith's instructions](http://pl.cs.jhu.edu/pl/ocaml/index.shtml).
