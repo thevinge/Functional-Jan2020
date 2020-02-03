@@ -30,8 +30,10 @@ See [The OPAM install page](https://opam.ocaml.org/doc/Install.html) for
 instructions. Depending on which method you use you may then need to
 run some terminal commands to set up the basics: 
 
- 0. Install dependencies (m4, make, gcc)
-    `sudo apt-get install m4 make gcc`
+ 0. Install dependencies (m4, make, gcc):
+    ```
+     sudo apt-get install m4 make gcc
+    ```
     (on Ubuntu/Debian Linux and Linux Subsystem)
 
     On Mac: install the three dependencies via macports or homebrew.
