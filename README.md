@@ -30,30 +30,31 @@ See [The OPAM install page](https://opam.ocaml.org/doc/Install.html) for
 instructions. Depending on which method you use you may then need to
 run some terminal commands to set up the basics: 
 
+ 0. Install dependencies (m4, make, gcc)
+    `sudo apt-get install m4 make gcc`
+    (on Ubuntu/Debian Linux and Linux Subsystem)
+
+    On Mac: install the three dependencies via macports or homebrew.
+
  1. `opam init`                   to initialize OPAM;
+    `opam init --disable-sandboxing`    (on Windows)
+
  2. `opam switch create 4.09.0`       to build OCaml version 4.09.0;
+
  3. ```
      eval `opam env`
     ```
     to let the shell know where the OPAM files are; and
- 4. also add the same line to your `.profile/.bashrc` shell init file
+
+ 4. also add the same line to your `.profile` or `.bashrc` shell init file
     so you will not have to keep doing that over and over.  
 
-Once you have the basics installed, run the following command to
-install additional necessary packages for the class: 
+ 5. Once you have the basics installed, run the following command to
+    install additional necessary packages for the class: 
 
-```
-  opam install qcheck ocamlfind ledit ocamlbuild merlin ocp-indent user-setup utop
-```
-
-If you are missing dependencies (m4, make, gcc), they can easily be installed
-with `apt-get` (Ubuntu Linux and Ubuntu Sub-system) or via macports/homebrew (Mac). 
-
-To avoid a dependency on `bubblewrap` you may have luck with:
-```
-    opam init --disable-sandboxing
-```
-
+    ```
+     opam install qcheck ocamlfind ledit ocamlbuild merlin ocp-indent user-setup utop
+    ```
 
 
 For Windows:
