@@ -122,12 +122,22 @@ Installing VS Code:
   VSCode, just open it up from the 'Terminal' menu and type `ocaml` or
   `utop` into the terminal.
 
+- On Windows 10: install the 'remote WSL' extension as described here:
 
-On Windows to get VS Code to communicate type-feedback with the
-'merlin'-server running under the Linux sub-system you need to: go to
-'Settings' and search for `reason.path.ocaml`
-- change the `ocamlfind` entry to read `bash -ic ocamlfind`
-- change the `ocamlmerlin` entry to read `bash -ic ocamlmerlin`
+    https://code.visualstudio.com/docs/remote/wsl
 
-Enabling a `bash` Terminal rather than a 'Powershell' will also let
-you run `ocaml` or `utop` from within VS Code.
+  This way, VS Code can find `ocamlfind` and `ocamlmerlin` in the
+  Windows Subsystem for Linux without further configuration.
+
+  Enabling a `bash` Terminal rather than a 'Powershell' will also let
+  you run `ocaml` or `utop` from within VS Code.
+
+
+Troubleshooting: If VS Code complains that it cannot find the `QCheck`
+module on either Windows, Mac, or Linux, create a file called `.merlin`
+with the content
+
+```
+PKG qcheck
+```
+This way, you inform the language server `merlin` of the `qcheck` dependency.
