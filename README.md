@@ -39,6 +39,7 @@ run some terminal commands to set up the basics:
     On Mac: install the three dependencies via macports or homebrew.
 
  1. `opam init`                   to initialize OPAM;
+ 
     `opam init --disable-sandboxing`    (on Windows)
 
  2. `opam switch create 4.09.0`       to build OCaml version 4.09.0;
