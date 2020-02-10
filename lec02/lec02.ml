@@ -30,7 +30,7 @@ let is_valid_bool s = match s with
 (* fac - again - now written with pattern matching *)
 let rec fac n = match n with
   | 0 -> 1
-  | n -> n * fac (n - 1)
+  | m -> m * fac (m - 1)
 
 (* pattern matching a pair with a let *)
 let distance_from_origo p =
