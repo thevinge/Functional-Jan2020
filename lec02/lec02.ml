@@ -94,7 +94,7 @@ let succ_test' =
 
 (* an example test that throws an error *)
 let div_test =
-  Test.make ~name:"div test" small_int (fun i -> (i <> 0) ==> (42 / i >= 0))
+  Test.make ~name:"div test" small_signed_int (fun i -> (i <> 0) ==> (42 / i >= 0))
 
 ;;
 QCheck_runner.run_tests ~verbose:true
