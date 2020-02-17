@@ -168,12 +168,12 @@ let arb_tree = make ~print:exp_to_string (mygen 8)
 
 let test_interpret =
   Test.make ~name:"test interpret"
-    (triple small_int arb_tree arb_tree)
+    (triple small_signed_int arb_tree arb_tree)
     (fun (xval,e0,e1) -> interpret xval (Plus(e0,e1))
                          = interpret xval (Plus(e1,e0)))
 
 (*
-Gen.generate ~n:10 Gen.small_int;;
+Gen.generate ~n:10 Gen.small_signed_int;;
 Gen.generate1 mygen;;
 Gen.generate1 mygen;;
  *)
