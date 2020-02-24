@@ -56,8 +56,8 @@ end
  (** Shrinking *)
 
 (* the false list example with/without shrinking *)
-let rev_twice_test =
-  Test.make ~name:"rev twice"
+let rev_thrice_test =
+  Test.make ~name:"rev thrice"
     (set_shrink Shrink.nil (list int))
     (*(list int)*)
     (fun xs -> List.rev (List.rev (List.rev xs)) = xs)
@@ -160,7 +160,7 @@ let wrong_test' =
     (fun e -> interpret 0 e = 0)
 ;;
 QCheck_runner.run_tests ~verbose:true
- [ rev_twice_test;
+ [ rev_thrice_test;
    wrong_test;
    wrong_test';
  ]
