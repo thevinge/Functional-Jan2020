@@ -42,7 +42,7 @@ struct
   let run_cmd c s q = match c with
     | Pop -> (try Queue.pop q = List.hd s with _ -> false)
     | Top -> (try Queue.top q = List.hd s with _ -> false)
-    | Push n -> Queue.push n q; true
+    | Push n -> begin Queue.push n q; true end
 
   let precond c s = match c with
     | Pop    -> s<>[]
