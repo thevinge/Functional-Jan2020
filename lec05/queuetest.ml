@@ -6,6 +6,7 @@ open QCheck
    To run it in utop/toplevel: 
      #require "qcheck";; 
      #require "qcstm";;
+     #require "ppx_deriving.show";;
 *)
 module QConf =
 struct
