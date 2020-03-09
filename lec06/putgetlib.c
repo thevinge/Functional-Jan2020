@@ -2,7 +2,8 @@
 int n = 0;
 
 void put(int m)
-{ if (n != 538) n = m; } /* an arbitrary injected bug */
+{ n = m; } /* an arbitrary injected bug */
+/*{ if (n != 538) n = m; }*/ /* an arbitrary injected bug */
 
 int get()
 { return n; }
