@@ -46,8 +46,8 @@ struct
   let init_sut () = Hashtbl.create ~random:false 42
   let cleanup _   = ()
   let run_cmd c s h = match c with
-    | Add (k,v) -> Hashtbl.add h k v; true
-    | Remove k  -> Hashtbl.remove h k; true
+    | Add (k,v) -> begin Hashtbl.add h k v; true end
+    | Remove k  -> begin Hashtbl.remove h k; true end
     | Find k    ->
       List.assoc_opt k s = (try Some (Hashtbl.find h k)
                             with Not_found -> None)
