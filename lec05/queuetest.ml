@@ -14,6 +14,7 @@ struct
   type cmd =
     | Pop (* may throw exception *)
     | Top (* may throw exception *)
+    | Length (* Extension *)
     | Push of int [@@deriving show { with_path = false }]
 
   let gen_cmd s =
@@ -23,6 +24,7 @@ struct
     else Gen.oneof
            [Gen.return Pop;
             Gen.return Top;
+            Gen.return Length;
             Gen.map (fun i -> Push i) int_gen]
 
   let arb_cmd s = QCheck.make ~print:show_cmd (gen_cmd s)
@@ -34,8 +36,9 @@ struct
         | []    -> []
         | _::s' -> s')
     | Top -> s
-    | Push i -> (*s@[i]*)
-      if i<>98 then s@[i] else s  (* an artificial fault in the model *)
+    | Length -> s
+    | Push i -> s@[i]
+      (*if i<>98 then s@[i] else s  (* an artificial fault in the model *)*)
 
   let init_sut () = Queue.create ()
   let cleanup _   = ()
@@ -43,11 +46,13 @@ struct
     | Pop -> (try Queue.pop q = List.hd s with _ -> false)
     | Top -> (try Queue.top q = List.hd s with _ -> false)
     | Push n -> Queue.push n q; true
+    | Length -> Queue.length q = List.length s
 
   let precond c s = match c with
     | Pop    -> s<>[]
     | Top    -> s<>[]
     | Push _ -> true
+    | Length -> true
 end
 
 module QT = QCSTM.Make(QConf)

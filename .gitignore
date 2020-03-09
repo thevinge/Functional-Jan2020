@@ -1,0 +1,55 @@
+
+# Created by https://www.gitignore.io/api/ocaml,reasonml,visualstudiocode
+# Edit at https://www.gitignore.io/?templates=ocaml,reasonml,visualstudiocode
+
+### OCaml ###
+*.annot
+*.cmo
+*.cma
+*.cmi
+*.a
+*.o
+*.cmx
+*.cmxs
+*.cmxa
+
+# ocamlbuild working directory
+_build/
+
+# ocamlbuild targets
+*.byte
+*.native
+
+# oasis generated files
+setup.data
+setup.log
+
+# Merlin configuring file for Vim and Emacs
+.merlin
+
+# Dune generated files
+*.install
+
+# Local OPAM switch
+_opam/
+
+# Esy-related generated files
+_esy/
+_build.prev/
+node_modules/
+
+### Reasonml ###
+/lib
+
+### VisualStudioCode ###
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+### VisualStudioCode Patch ###
+# Ignore all local history of files
+.history
+
+# End of https://www.gitignore.io/api/ocaml,reasonml,visualstudiocode
