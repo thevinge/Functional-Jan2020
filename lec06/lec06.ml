@@ -110,7 +110,7 @@ QCheck_runner.run_tests ~verbose:true
    fold_test2;
   ]
 ;;
-(*QCheck_runner.set_seed 76543210;;*) (* comment this line out and try a few random seeds *)
+QCheck_runner.set_seed 76543210;; (* comment this line out and try a few random seeds *)
 QCheck_runner.run_tests ~verbose:true
   [fold_test3;
    fold_test3']
