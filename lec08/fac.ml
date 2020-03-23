@@ -2,7 +2,7 @@ let rec fac n = match n with
   | 0 -> 1
   | n -> n * fac (n - 1)
 ;;
-Printf.printf "%i\n" (fac 0)
+Printf.printf "%i\n" (fac 5)
 
 
 (*
