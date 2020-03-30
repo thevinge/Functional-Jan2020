@@ -103,10 +103,16 @@ struct
     | Lit of int
     | Plus of aexp * aexp
     | Times of aexp * aexp
+    | Minus of aexp * aexp
+    | Division of aexp * aexp
 
   let rec exp_to_string ae = match ae with
     | Var x -> x
     | Lit i -> string_of_int i
+    | Minus (ae0, ae1) ->
+      let s0 = exp_to_string ae0 in
+      let s1 = exp_to_string ae1 in
+      "(" ^ s0 ^ "-" ^ s1 ^ ")"
     | Plus (ae0, ae1) ->
       let s0 = exp_to_string ae0 in
       let s1 = exp_to_string ae1 in
@@ -115,6 +121,10 @@ struct
       let s0 = exp_to_string ae0 in
       let s1 = exp_to_string ae1 in
       "(" ^ s0 ^ "*" ^ s1 ^ ")"
+    | Division (ae0, ae1) ->
+      let s0 = exp_to_string ae0 in
+      let s1 = exp_to_string ae1 in
+      "(" ^ s0 ^ "/" ^ s1 ^ ")"
   
   open Gen
   let vargen = string_size ~gen:(char_range 'a' 'z') (int_range 1 10)
@@ -130,6 +140,8 @@ struct
         oneof
           [leafgen env;
            map2 (fun l r -> Plus(l,r)) (rgen (n/2)) (rgen (n/2));
+           map2 (fun l r -> Minus(l,r)) (rgen (n/2)) (rgen (n/2));
+           map2 (fun l r -> Division(l,r)) (rgen (n/2)) (rgen (n/2));
            map2 (fun l r -> Times(l,r)) (rgen (n/2)) (rgen (n/2))]
     ))
 
