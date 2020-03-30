@@ -110,7 +110,8 @@ struct
           stmtlistgen env' (n/2) >>= fun ss -> return (s::ss)
 
   let rec stmt_shrink s = match s with
-    | Block ss -> Iter.map (fun ss' -> Block ss') (Shrink.list ss)
+    | Block ss ->
+      Iter.map (fun ss' -> Block ss') (Shrink.list ~shrink:stmt_shrink ss)
     | If (e,s) ->
       Iter.(
         return s
@@ -120,7 +121,7 @@ struct
       Iter.(
         return s
         <+>
-        map (fun s'' -> While (e,s''))  (stmt_shrink s))
+        map (fun s' -> While (e,s'))  (stmt_shrink s))
     | _ -> Iter.empty
 
   ;;
