@@ -43,7 +43,9 @@ open Gen
 (*  lit_gen : typ -> (lit option) Gen.t  *)
 let lit_gen t = match t with
   | Unit   -> return (Some Unitlit)
-  | Int    -> map (fun i -> Some (Intlit i)) small_signed_int
+(*  | Int    -> map (fun i -> Some (Intlit i)) small_signed_int*)
+  | Int    -> Gen.oneof [Gen.map (fun i -> Some (Intlit i)) small_signed_int; 
+  Gen.map (fun i -> Some (Intlit i)) int;]
   | String -> let str_gen = string_size ~gen:printable small_nat in
               map (fun s -> Some (Strlit s)) str_gen
   | Fun (_,_) -> return None
