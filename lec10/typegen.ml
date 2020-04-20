@@ -148,8 +148,8 @@ let rec exp_gen env t n =
   in
 
   let rules = match n with
-    | 0 -> [const_rule; var_rule]
-    | _ -> [const_rule; var_rule; lam_rule; app_rule; let_rule; indir_rule] in
+    | 0 -> [(1,const_rule); (1,var_rule)]
+    | _ -> [(1,const_rule); (1,var_rule); (1,lam_rule); (1,app_rule); (1,let_rule); (4,indir_rule)] in
 
   let rec try_each_loop rules = match rules with
     | [] -> return None
@@ -159,7 +159,7 @@ let rec exp_gen env t n =
       | _    -> return res in
 
   (*oneofl rules >>= fun rule -> rule env t*)  (* without backtracking *)
-  shuffle_l rules >>= try_each_loop            (* with backtracking *)
+  shuffle_w_l rules >>= try_each_loop            (* with backtracking *)
 
 
 let init_env =

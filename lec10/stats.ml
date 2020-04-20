@@ -33,5 +33,5 @@ let binop_test =
 
 ;;
 QCheck_runner.run_tests_main
-  [ failure_test;
+  [ (*failure_test;*)
     binop_test ]
