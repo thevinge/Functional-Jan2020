@@ -61,7 +61,7 @@ For Linux and Mac:
 
  1. Install `opam`. See [The OPAM install page](https://opam.ocaml.org/doc/Install.html) for
     instructions. Depending on which method you use you may then need to
-    run some terminal commands, e.g.:
+    run some terminal commands, e.g., for Ubuntu:
     ```
      sudo add-apt-repository ppa:avsm/ppa
      sudo apt update
