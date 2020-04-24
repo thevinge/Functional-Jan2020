@@ -110,17 +110,13 @@ Checking your OCaml and QCheck installation:
 To ensure that OCaml and QCheck is properly installed:
 
 1. check that you can use the arrow keys and backspace in the OCaml
-   toplevel if you run the command
-     `utop` or
-     `ledit ocaml` (Linux and MacOS) or
-     `rlwrap ocaml` (Windows)
-   (you don't need ledit or rlwrap as a console inside VS Code it seems)
+   toplevel if you run the command `utop`
 
-2. check that in the utop toplevel
+2. check that in the `utop` toplevel
   ```
     #list;;
   ```
-   lists package `qcheck` (version: 0.5 or above)   (not 0.2, 0.3, or 0.4)
+   lists package `qcheck` (version: 0.5 or above)
 
    For the `ocaml` toplevel you need to write two lines:
   ```
