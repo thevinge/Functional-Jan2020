@@ -61,7 +61,7 @@ For Linux and Mac:
 
  1. Install `opam`. See [The OPAM install page](https://opam.ocaml.org/doc/Install.html) for
     instructions. Depending on which method you use you may then need to
-    run some terminal commands, e.g., for Ubuntu:
+    run some terminal commands, e.g., for Ubuntu (and Ubuntu under Windows Subsystem for Linux):
     ```
      sudo add-apt-repository ppa:avsm/ppa
      sudo apt update
@@ -72,21 +72,22 @@ For Linux and Mac:
  
     `opam init --disable-sandboxing`    (on Windows)
 
- 3. `opam switch create 4.09.0`       to build OCaml version 4.09.0;
+    Answer 'y' to allowing `opam` to add changes to your `.profile`.
+
+ 3. `opam switch create 4.10.0`       to build OCaml version 4.10.0;
+
+    If step 2 finishes with `installed ocaml.4.10.0` you can skip this step.
 
  4. ```
-     eval `opam env`
+     eval $(opam env)
     ```
-    to let the shell know where the OPAM files are; and
+    to let the shell know where the OPAM files are.
 
- 5. also add the same line to your `.profile` or `.bashrc` shell init file
-    so you will not have to keep doing that over and over.  
-
- 6. Once you have the basics installed, run the following command to
+ 5. Once you have the basics installed, run the following command to
     install additional necessary packages for the class: 
 
     ```
-     opam install qcheck ocamlfind ledit ocamlbuild merlin ocp-indent user-setup utop
+     opam install qcheck ocamlfind ocamlbuild merlin ocp-indent user-setup utop
     ```
 
 
