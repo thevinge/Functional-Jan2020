@@ -50,9 +50,6 @@ The below instructions are adapted from [Scott F. Smith's instructions](http://p
 
 For Linux and Mac:
 ------------------
-See [The OPAM install page](https://opam.ocaml.org/doc/Install.html) for
-instructions. Depending on which method you use you may then need to
-run some terminal commands to set up the basics: 
 
  0. Install dependencies (m4, make, gcc):
     ```
@@ -62,21 +59,30 @@ run some terminal commands to set up the basics:
 
     On Mac: install the three dependencies via macports or homebrew.
 
- 1. `opam init`                   to initialize OPAM;
+ 1. Install `opam`. See [The OPAM install page](https://opam.ocaml.org/doc/Install.html) for
+    instructions. Depending on which method you use you may then need to
+    run some terminal commands, e.g.:
+    ```
+     sudo add-apt-repository ppa:avsm/ppa
+     sudo apt update
+     sudo apt install opam
+    ```
+
+ 2. `opam init`                   to initialize OPAM;
  
     `opam init --disable-sandboxing`    (on Windows)
 
- 2. `opam switch create 4.09.0`       to build OCaml version 4.09.0;
+ 3. `opam switch create 4.09.0`       to build OCaml version 4.09.0;
 
- 3. ```
+ 4. ```
      eval `opam env`
     ```
     to let the shell know where the OPAM files are; and
 
- 4. also add the same line to your `.profile` or `.bashrc` shell init file
+ 5. also add the same line to your `.profile` or `.bashrc` shell init file
     so you will not have to keep doing that over and over.  
 
- 5. Once you have the basics installed, run the following command to
+ 6. Once you have the basics installed, run the following command to
     install additional necessary packages for the class: 
 
     ```
