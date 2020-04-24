@@ -59,7 +59,7 @@ For Linux and Mac:
 
     On Mac: install the three dependencies via macports or homebrew.
 
- 1. Install `opam`. See [The OPAM install page](https://opam.ocaml.org/doc/Install.html) for
+ 1. Install `opam`. See [the OPAM install page](https://opam.ocaml.org/doc/Install.html) for
     instructions. Depending on which method you use you may then need to
     run some terminal commands, e.g., for Ubuntu (and Ubuntu under Windows Subsystem for Linux):
     ```
@@ -72,16 +72,13 @@ For Linux and Mac:
  
     `opam init --disable-sandboxing`    (on Windows)
 
-    Answer 'y' to allowing `opam` to add changes to your `.profile`.
+    Answer `y` to allowing `opam` to add changes to your `.profile`.
 
  3. `opam switch create 4.10.0`       to build OCaml version 4.10.0;
 
-    If step 2 finishes with `installed ocaml.4.10.0` you can skip this step.
+    If step 2 above finishes with `installed ocaml.4.10.0` you can skip this step.
 
- 4. ```
-     eval $(opam env)
-    ```
-    to let the shell know where the OPAM files are.
+ 4. `eval $(opam env)`        to let the shell know where the OPAM files are.
 
  5. Once you have the basics installed, run the following command to
     install additional necessary packages for the class: 
