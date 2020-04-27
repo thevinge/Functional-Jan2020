@@ -1,0 +1,8 @@
+clang -Wall -Wextra -pedantic -g -o example5 -fsanitize=address example5.c
+
+
+clang -Wall -Wextra -pedantic -g -o example5 -fsanitize=memory example5.c
+
+clang -Wall -Wextra -pedantic -o example1 example1.c
+
+clang -Wall -pedantic -g -o ubsan -fsanitize=undefined ubsan.c
