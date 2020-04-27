@@ -50,9 +50,6 @@ The below instructions are adapted from [Scott F. Smith's instructions](http://p
 
 For Linux and Mac:
 ------------------
-See [The OPAM install page](https://opam.ocaml.org/doc/Install.html) for
-instructions. Depending on which method you use you may then need to
-run some terminal commands to set up the basics: 
 
  0. Install dependencies (m4, make, gcc):
     ```
@@ -62,25 +59,32 @@ run some terminal commands to set up the basics:
 
     On Mac: install the three dependencies via macports or homebrew.
 
- 1. `opam init`                   to initialize OPAM;
+ 1. Install `opam`. See [the OPAM install page](https://opam.ocaml.org/doc/Install.html) for
+    instructions. Depending on which method you use you may then need to
+    run some terminal commands, e.g., for Ubuntu (and Ubuntu under Windows Subsystem for Linux):
+    ```
+     sudo add-apt-repository ppa:avsm/ppa
+     sudo apt update
+     sudo apt install opam
+    ```
+
+ 2. `opam init`                   to initialize OPAM;
  
     `opam init --disable-sandboxing`    (on Windows)
 
- 2. `opam switch create 4.09.0`       to build OCaml version 4.09.0;
+    Answer `y` to allowing `opam` to add changes to your `.profile`.
 
- 3. ```
-     eval `opam env`
-    ```
-    to let the shell know where the OPAM files are; and
+ 3. `opam switch create 4.10.0`       to build OCaml version 4.10.0;
 
- 4. also add the same line to your `.profile` or `.bashrc` shell init file
-    so you will not have to keep doing that over and over.  
+    If step 2 above finishes with `installed ocaml.4.10.0` you can skip this step.
+
+ 4. `eval $(opam env)`        to let the shell know where the OPAM files are.
 
  5. Once you have the basics installed, run the following command to
     install additional necessary packages for the class: 
 
     ```
-     opam install qcheck ocamlfind ledit ocamlbuild merlin ocp-indent user-setup utop
+     opam install qcheck ocamlfind ocamlbuild merlin ocp-indent user-setup utop
     ```
 
 
@@ -106,17 +110,13 @@ Checking your OCaml and QCheck installation:
 To ensure that OCaml and QCheck is properly installed:
 
 1. check that you can use the arrow keys and backspace in the OCaml
-   toplevel if you run the command
-     `utop` or
-     `ledit ocaml` (Linux and MacOS) or
-     `rlwrap ocaml` (Windows)
-   (you don't need ledit or rlwrap as a console inside VS Code it seems)
+   toplevel if you run the command `utop`
 
-2. check that in the utop toplevel
+2. check that in the `utop` toplevel
   ```
     #list;;
   ```
-   lists package `qcheck` (version: 0.5 or above)   (not 0.2, 0.3, or 0.4)
+   lists package `qcheck` (version: 0.5 or above)
 
    For the `ocaml` toplevel you need to write two lines:
   ```
